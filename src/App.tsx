@@ -13,29 +13,41 @@ const Container = styled.div`
 const SlideOutHorizontal = styled.div`
   display: flex;
   align-items: center;
+  position: relative;
+  overflow: hidden;
+  width: 160px;
+  height: 50px;
   label{
+    border-radius: 100%;
     border: 4px solid black;
+    background: white;
     cursor: pointer;
+    padding: 9px;
     position: absolute;
     z-index: 99999;
   }
   input {
-    display: none;
+  display: none;
   }
   .iconsWrapper {
+    border: 4px solid black;
+    border-radius: 0 25px 25px 0;
     position: absolute;
+    transition: .5s all;
+    left: -107px;
     ul {
-      display: none;
+      display: flex;
       list-style-type: none;
+      margin-block-start: 0;
+      margin-block-end: 0;
+      padding: 0;
     }
     li{
       padding: 0 5px;
     }
   }
   input:checked ~ div.iconsWrapper {
-    ul {
-      display: flex;
-    }
+    left: 20px;
   }
 `;
 
